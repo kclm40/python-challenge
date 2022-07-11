@@ -1,6 +1,7 @@
 #Financial Analysis
 #----------------------------------------
 #Import dependencies
+from cgitb import text
 import os
 import csv
 
@@ -30,7 +31,7 @@ with open(csvpath) as csvfile:
     #Read the header row first
     csv_header = next(csvreader)
     
-
+    
     # Read each row of data after the header
     
     for row in csvreader:
@@ -84,3 +85,22 @@ print(f"Net Total P/L: ${net_profit_loss}")
 print(f"Average Change: ${round(average_change,2)}")
 print(f"Great Increase in Profits: {increase_month} (${round(greatest_increase)})")
 print(f"Great Decrease in Profits: {decrease_month} (${round(greatest_decrease)})")
+
+#print to text file
+textfile_summary = []
+textfile_summary.append("Financial Analysis")
+textfile_summary.append("-" * 50)
+textfile_summary.append(f"Total Months: {total_months}")
+textfile_summary.append(f"Net Total P/L: ${net_profit_loss}")
+textfile_summary.append(f"Average Change: ${round(average_change,2)}")
+textfile_summary.append(f"Great Increase in Profits: {increase_month} (${round(greatest_increase)})")
+textfile_summary.append(f"Great Decrease in Profits: {decrease_month} (${round(greatest_decrease)})")
+
+filename = 'PyBank.txt'
+
+with open(filename,'w') as file:
+    for PyBank in textfile_summary:
+        print(textfile_summary)
+        file.write(PyBank + '\n')
+
+
