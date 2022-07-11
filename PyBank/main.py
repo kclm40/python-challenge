@@ -27,7 +27,7 @@ with open(csvpath) as csvfile:
 
     #This stores a reference to a file stream
     csvreader = csv.reader(csvfile, delimiter=',')
-    print([csvreader])
+    
     #Read the header row first
     csv_header = next(csvreader)
     
