@@ -5,9 +5,11 @@
 import os
 import csv
 #add budget_data.csv file
-csvpath = os.path.join('/Users/kaseymathues/Documents/GitHub/python-challenge/PyBank/Resources/budget_data.csv')
-#define PyBank variables
+csvpath = os.path.join("Resources","budget_data.csv")
+    #correct file path 
+    # csvpath = os.path.join('..', 'Resources', 'budget_data.csv')
 
+#define PyBank variables
 
 total_months = 0
 net_profit_loss = 0
