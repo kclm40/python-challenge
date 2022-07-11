@@ -44,6 +44,7 @@ with open(csvpath) as csvfile:
             increase_month = row[0]
             decrease_month = row[0]
         else:
+            #calculate greatest increase & decrease
             change = current_month-previous_month
             average_change += change
             if change > greatest_increase:
@@ -71,12 +72,6 @@ with open(csvpath) as csvfile:
         
 average_change = average_change/(total_months-1)   
         
-       
-    #calculate the greatest increase in profits (date and amount) over the entire period
-
-   
-    #calculate the greatest decrease in profits (datea nd amount) over the entire period
-
 #Summary
 print("Financial Analysis")
 print("-" * 50)
