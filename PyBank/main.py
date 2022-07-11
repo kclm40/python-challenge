@@ -9,7 +9,7 @@ import csv
 csvpath = os.path.join('/Users/kaseymathues/dropbox/Mac/Documents/GitHub/python-challenge/PyBank/Resources/budget_data.csv')
 
 #define PyBank variables
-profit_loss = []
+
 
 
 total_months = 0
