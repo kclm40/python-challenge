@@ -1,7 +1,7 @@
 #Financial Analysis
 #----------------------------------------
 #Import dependencies
-from cgitb import text
+
 import os
 import csv
 #add budget_data.csv file
