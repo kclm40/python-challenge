@@ -6,7 +6,7 @@ import os
 import csv
 #add budget_data.csv file
 csvpath = os.path.join("Resources","budget_data.csv")
-
+filename = os.path.join("PyBank.txt")
 
 #define PyBank variables
 
@@ -76,16 +76,15 @@ print(f"Great Increase in Profits: {increase_month} (${round(greatest_increase)}
 print(f"Great Decrease in Profits: {decrease_month} (${round(greatest_decrease)})")
 
 #print to text file
-textfile_summary = []
-textfile_summary.append("Financial Analysis")
-textfile_summary.append("-" * 50)
-textfile_summary.append(f"Total Months: {total_months}")
-textfile_summary.append(f"Total: ${net_profit_loss}")
-textfile_summary.append(f"Average Change: ${round(average_change,2)}")
-textfile_summary.append(f"Great Increase in Profits: {increase_month} (${round(greatest_increase)})")
-textfile_summary.append(f"Great Decrease in Profits: {decrease_month} (${round(greatest_decrease)})")
-filename = 'PyBank.txt'
+
 with open(filename,'w') as file:
-    for PyBank in textfile_summary:
-        print(textfile_summary)
-        file.write(PyBank + '\n')
+    file.write("Financial Analysis\n")
+    file.write("-" * 50+"\n")
+    file.write(f"Total Months: {total_months}\n")
+    file.write(f"Total: ${net_profit_loss}\n")
+    file.write(f"Average Change: ${round(average_change,2)}\n")
+    file.write(f"Great Increase in Profits: {increase_month} (${round(greatest_increase)})\n")
+    file.write(f"Great Decrease in Profits: {decrease_month} (${round(greatest_decrease)})\n")
+
+    
+    
