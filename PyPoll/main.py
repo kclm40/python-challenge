@@ -69,6 +69,7 @@ with open(PyPoll_output,'w') as file:
     file.write(f"Total Votes: {total_votes}\n")
     file.write("=" *50+"\n")
     for candidate in candidates_list:
+        percentage_votes = (candidates_list[candidate]/total_votes)
         file.write(f"{candidate}: {percentage_votes:.3%} ({candidates_list[candidate]})\n")
     file.write("=" *50+"\n")
     file.write(f"Winner: {winner_name}\n")
