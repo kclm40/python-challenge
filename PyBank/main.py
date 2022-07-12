@@ -6,8 +6,7 @@ import os
 import csv
 #add budget_data.csv file
 csvpath = os.path.join("Resources","budget_data.csv")
-    #correct file path 
-    # csvpath = os.path.join('..', 'Resources', 'budget_data.csv')
+
 
 #define PyBank variables
 
