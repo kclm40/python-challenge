@@ -31,9 +31,10 @@ with open(csvpath) as csvfile:
     # Read each row of data after the header
     
     for row in csvreader:
-        
+
+    #define current_month    
         current_month = float(row[1])
-    
+    #set calculation for greatest increase & decrease
         if total_months == 0:
             greatest_increase = 0
             greatest_decrease = 0
@@ -49,11 +50,9 @@ with open(csvpath) as csvfile:
             elif change < greatest_decrease:
                 greatest_decrease = change
                 decrease_month = row[0]
-        
-        previous_month = current_month
-        
-    
 
+        #set previous month
+        previous_month = current_month
     
     #calculate the # of months
         total_months +=1
@@ -63,7 +62,7 @@ with open(csvpath) as csvfile:
        
        
         
-    #calculate the changes in "Profit/Losses" over the entire period, and then the average of those changes
+#calculate the average of those changes
         
 average_change = average_change/(total_months-1)   
         
@@ -75,6 +74,7 @@ print(f"Net Total P/L: ${net_profit_loss}")
 print(f"Average Change: ${round(average_change,2)}")
 print(f"Great Increase in Profits: {increase_month} (${round(greatest_increase)})")
 print(f"Great Decrease in Profits: {decrease_month} (${round(greatest_decrease)})")
+
 #print to text file
 textfile_summary = []
 textfile_summary.append("Financial Analysis")

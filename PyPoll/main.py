@@ -1,7 +1,6 @@
 #Election Results
 #Import dependencies
 
-from enum import unique
 import os
 import csv
 #add budget_data.csv file
@@ -13,6 +12,7 @@ total_votes = 0
 candidate_votes = []
 candidates_list = {}
 winner = 0
+
 #open the file in "read" mode ('r') and store the contents in the variable "text"
 with open(csvpath) as csvfile:
     #This stores a reference to a file stream
@@ -25,13 +25,14 @@ with open(csvpath) as csvfile:
 
         #Total number of votes cast
         total_votes += 1 
-
+        #begin defining candidates
         candidate = row[2]
         if candidate in candidates_list:
             candidates_list[candidate] += 1
         else:
             candidates_list[candidate] = 1
 
+#print in terminal
 print("Election Results")
 
 print('-'*50)
@@ -39,18 +40,20 @@ print('-'*50)
 print(f"Total Votes: {total_votes}")
 
 print('-'*50)
-            
+
+#calculate % of votes            
 for candidate in candidates_list:
                     
     percentage_votes = (candidates_list[candidate]/total_votes)
         
     print(f"{candidate}: {percentage_votes:.3%} ({candidates_list[candidate]})")     
 
+    #calculate winner
     if candidates_list[candidate]>winner:
         winner = candidates_list[candidate]
         winner_name = candidate
 
-
+#print in terminal
 print('-'*50)
 
 print(f"Winner: {winner_name}")
@@ -59,7 +62,7 @@ print('-'*50)
 
 #print to text file
 
-
+#print in .txt file
 with open(PyPoll_output,'w') as file:
     file.write("Election Results\n")
     file.write("=" *50+"\n")
